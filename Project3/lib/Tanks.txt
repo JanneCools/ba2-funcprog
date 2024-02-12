@@ -1,0 +1,55 @@
+function playerPicture() {
+    return square[-1,1,20,0,0,0,255]
+}
+
+function tankPicture() {
+    return square[-1,1,20,0,0,0,125]
+}
+
+function bulletPicture() {
+    return circle[0,0,10,0,0,0,255]
+}
+
+function move(Tanks ((p,d)+t) b g s) {
+    if(KeyLeft) {
+        d=(-1,0)
+    }
+    if(KeyRight) {
+        d=(1,0)
+    }
+    if(KeyUp) {
+        d=(0,1)
+    }
+    if(KeyDown) {
+        d=(0,-1)
+    }
+    if(KeySpace) {
+        b=b+(p+3*d)
+    }
+}
+
+function next(Tanks t b g s)) {
+    p = first (head t)
+    d = snd (head t)
+    newCoord=p+d
+    if(contains(b,tail t)) {
+        Tanks (newCoord + newTanks) b g (s+1)
+    }
+    if(contains(b,head t)) {
+        GameOver s g
+    }
+    if(!onBoard(newCoord)) {
+        GameOver s g
+    }
+    if(closeTank(tail t)) {
+        Tanks (newCoord + t) (b+newBullet) g (s+1)
+    }
+}
+
+function runTanks() {
+    setPic(playerPicture)
+    setPic(tankPicture)
+    setPic(bulletPicture)
+    set.move(Tanks t b g s)
+    set.next(Tanks t b g s)
+}

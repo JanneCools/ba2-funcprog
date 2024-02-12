@@ -1,0 +1,50 @@
+function snakePicture() {
+    return square[0,0,20,135,211,124,255]
+}
+
+function snakeHeadPicture() {
+    return square[0,0,20,30,130,76,255]
+}
+
+function foodPicture() {
+    return square[0,0,20,0,0,0,255]
+}
+
+function move(Snake s f d g) {
+    if(KeyLeft) {
+        d=(-1,0)
+    }
+    if(KeyRight) {
+        d=(1,0)
+    }
+    if(KeyUp) {
+        d=(0,1)
+    }
+    if(KeyDown) {
+        d=(0,-1)
+    }
+}
+
+function next(Snake s f d g) {
+    newCoord=s+d
+    if(contains(newCoord,f)) {
+        Snake (newHead+s) f d g
+    }
+    if(contains(newCoord,s)) {
+        GameOver length(s) g
+    }
+    if(!onBoard(newCoord)) {
+        GameOver length(s) g
+    }
+    if(randomNumber%3==0) {
+        Snake s (f+newFood) d g
+    }
+}
+
+function runSnake() {
+    setPic(snakePicture)
+    setPic(snakeHeadPicture)
+    setPic(foodPicture)
+    set.move(Snake s f d g)
+    set.next(Snake s f d g)
+}
